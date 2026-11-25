@@ -18,5 +18,9 @@
         <li>{{ categorie }}</li>
         {% endfor %}
     </ul>
+
+    <form action="{{ path ('app_category_new')}}" method="get">
+        <button>Ajouter</button>
+    </form>
 </div>
 {% endblock %}
