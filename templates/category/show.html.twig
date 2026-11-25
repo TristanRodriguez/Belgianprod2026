@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche catégorie{% endblock %}
+
+{% block stylesheets %}
+<style>
+    h1 { color : purple;}
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Fiche des catégories</h1>
+
+    <p>{{ category.name }}</p>
+
+    
+    <form action="{{ path ('app_categorie_edit', {'id' : category.id}) }}" method="post">
+        
+        <input type="hidden" name="_method" value="PUT">
+        
+        <button>Modifier</button>
+    </form>
+
+    
+    <form action="{{ path ('app_categorie_delete', {'id' : category.id}) }}" method="post"
+        onsbumit="return confirm('Supprimer ?)">
+        
+        <input type="hidden" name="_method" value="DELETE">
+        
+        <button>Delete</button>
+    </form>
+</div>
+{% endblock %}

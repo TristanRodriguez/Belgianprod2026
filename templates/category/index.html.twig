@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block stylesheets %}
+<style>
+    h1 { color : purple;}
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Listes des catégories</h1>
+
+    <ul>
+        {% for categorie in categories %}
+        <li>{{ categorie }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
